@@ -6,11 +6,14 @@ shinyUI(fluidPage(
   
   sidebarLayout(
     sidebarPanel(
+      #The instruction for the prediction section.
       p("Please input your car's weight, select the type of your cylinder and transmission from below panel. 
       Your car's predicted mpg  as well as the 95% confidence interval will be shown in the right panel reactively."),
       textInput("wt", h4("The weight of your car (lb):"), value=3000),
       selectInput("cyl", h4("Cylinder Type:"), choices=list("4 Cylinders"=4, "6 Cylinders"=6, "8 Cylinders"=8),selected=4),
       radioButtons('am', h4("Transmission Type:"), choices=list("Automatic"="0", "Manual"="1"),selected="0"),
+      
+      #Instruction for the Plot using the records in the database.
       p("Select the category you want the points to be grouped by, 
         the app will produce an overview of the relationship between mpg and weight in the 'mtcars' 
         dataset. A linear regression line as well as the standard error interval for each 
